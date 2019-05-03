@@ -14,6 +14,7 @@ class CreateRestaurants < ActiveRecord::Migration[5.2]
       t.string :reference
       t.string :cep
       t.float :latitude
+      t.float :longitude
       t.references :category, foreign_key: true
 
       t.timestamps

@@ -8,11 +8,11 @@ class RestaurantSerializer < ActiveModel::Serializer
   has_many :product_categories, if: -> { @instance_options[:product_categories] }
 
   def image_url
-    rails_blob_url(objetc.image)
+    rails_blob_url(object.image)
   end
 
   def review
-    objetc.reviews&.average(:value)
+    object.reviews&.average(:value)
   end
 
 

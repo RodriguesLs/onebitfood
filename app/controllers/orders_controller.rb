@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
-  before_action :set_order
+  before_action :set_order, only: :show
+  
   def create
     order = Order.new(order_params)
     if order.save
@@ -9,7 +10,9 @@ class OrdersController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    render json: @order
+  end
 
   private
 
