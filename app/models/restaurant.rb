@@ -3,4 +3,14 @@ class Restaurant < ApplicationRecord
   has_many :orders
   has_many :reviews
   has_many :product_categories
+
+  validates_associated :category
+  validates :name, presence: true
+  validates :status, presence: true
+  validates :delivery_tax, presence: true
+  validates :city, presence: true
+  validates :street, presence: true
+
+  enum status: {closed: 0, open: 1}
+
 end
